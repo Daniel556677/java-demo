@@ -43,7 +43,9 @@ public class ProviderRestry {
         // 这里由classLoader的getResource方法获得包名并封装成URL形式
         URL url = new Object() {
             public URL getPath() {
-                return this.getClass().getClassLoader().getResource(packageName.replace("\\.", "/"));
+                String packageDir = packageName.replace(".", "/");
+                URL o = this.getClass().getClassLoader().getResource(packageDir);
+                return o;
             }
 
         }.getPath();
@@ -55,7 +57,7 @@ public class ProviderRestry {
             if (file.isDirectory()) {
                 findProviderClass(packageName + "." + file.getName());
             } else {
-                providerClassList.add(packageName + file.getName().replace(".class", ""));
+                providerClassList.add(packageName + "." + file.getName().replace(".class", ""));
             }
         }
 

@@ -26,14 +26,14 @@ public class ProviderNettyHandler extends ChannelInboundHandlerAdapter {
     public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
         // 提取consumer传递过来的参数
         RpcMessage rpcMessage = (RpcMessage) msg;
-        String className = rpcMessage.getClassName();
+        String interfaceName = rpcMessage.getClassName();
         String methodName = rpcMessage.getMethodName();
         Class<?>[] parameterType = rpcMessage.getParameterType();
-        String parameterValue = rpcMessage.getParameterValue();
+        Object[] parameterValues = rpcMessage.getParameterValues();
         // 将注册缓存instanceCacheMap的provider实例提取出来，然后进行反射调用
-        Object instance = ProviderRestry.getInstanceCacheMap().get(className);
+        Object instance = ProviderRestry.getInstanceCacheMap().get(interfaceName);
         Method method = instance.getClass().getMethod(methodName, parameterType);
-        Object res = method.invoke(instance, parameterValue);
+        Object res = method.invoke(instance, parameterValues);
         // 最后将结果刷到netty的输出流中返回给consumer
         ctx.writeAndFlush(res);
         ctx.close();

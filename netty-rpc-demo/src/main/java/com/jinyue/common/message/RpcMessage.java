@@ -1,13 +1,22 @@
 package com.jinyue.common.message;
 
+import java.io.Serializable;
+
 /**
  * netty远程通信过程中传递的消息
  */
-public class RpcMessage {
+public class RpcMessage implements Serializable {
     private String className;
     private String methodName;
     private Class<?>[] parameterType;
-    private String parameterValue;
+    private Object[] parameterValues;
+
+    public RpcMessage(String className, String methodName, Class<?>[] parameterType, Object[] parameterValues) {
+        this.className = className;
+        this.methodName = methodName;
+        this.parameterType = parameterType;
+        this.parameterValues = parameterValues;
+    }
 
     public void setClassName(String className) {
         this.className = className;
@@ -21,8 +30,8 @@ public class RpcMessage {
         this.parameterType = parameterType;
     }
 
-    public void setParameterValue(String parameterValue) {
-        this.parameterValue = parameterValue;
+    public void setParameterValues(String parameterValue) {
+        this.parameterValues = parameterValues;
     }
 
     public String getClassName() {
@@ -37,7 +46,7 @@ public class RpcMessage {
         return parameterType;
     }
 
-    public String getParameterValue() {
-        return parameterValue;
+    public Object[] getParameterValues() {
+        return parameterValues;
     }
 }
