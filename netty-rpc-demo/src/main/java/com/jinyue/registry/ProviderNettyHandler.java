@@ -30,7 +30,7 @@ public class ProviderNettyHandler extends ChannelInboundHandlerAdapter {
         Class<?>[] parameterType = rpcMessage.getParameterType();
         Object[] parameterValues = rpcMessage.getParameterValues();
         // 将注册缓存instanceCacheMap的provider实例提取出来，然后进行反射调用
-        Object instance = ProviderRestry.getInstanceCacheMap().get(interfaceName);
+        Object instance = ProviderLocalRegistry.getInstanceCacheMap().get(interfaceName);
         Method method = instance.getClass().getMethod(methodName, parameterType);
         Object res = method.invoke(instance, parameterValues);
         // 最后将结果刷到netty的输出流中返回给consumer
