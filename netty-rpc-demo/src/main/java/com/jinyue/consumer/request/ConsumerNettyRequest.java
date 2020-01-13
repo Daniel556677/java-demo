@@ -13,7 +13,9 @@ import io.netty.handler.codec.serialization.ClassResolvers;
 import io.netty.handler.codec.serialization.ObjectDecoder;
 import io.netty.handler.codec.serialization.ObjectEncoder;
 
-
+/**
+ * 这个类主要承担consumer对netty服务端发请请求的相关逻辑
+ */
 public class ConsumerNettyRequest {
 
     public Object sendRequest(String interfaceName, String methodName, Class<?>[] parameterType, Object[] parameterValues) {

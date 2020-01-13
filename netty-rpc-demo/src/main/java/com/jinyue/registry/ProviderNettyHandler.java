@@ -8,15 +8,14 @@ import java.lang.reflect.Method;
 
 
 /**
- * 将provider的服务实现类注册到本地缓存里面，采用ConcurrentHashMap【key为接口名，value为服务实例】
- * 有consumer调用时，此时roviderRegistryHandler再从缓存实例根据传过来的接口名拿到实现类实例，
+ * 有consumer调用时，此时ProviderNettyHandler再从ProviderRestry类的缓存实例根据传过来的接口名拿到实现类实例，
  * 然后再拿到实现类实例的方法，再对该方法进行反射调用，最后将调用后的结果返回给consumer即可。
  */
 public class ProviderNettyHandler extends ChannelInboundHandlerAdapter {
 
     /**
      * 当netty服务端接收到有consumer的请求时，此时将会进入到这个channelRead方法
-     * 此时就可以把consumer调用的参数提取出来，然后再从缓存注册中心instanceCacheMap里
+     * 此时就可以把consumer调用的参数提取出来，然后再从ProviderRestry类的缓存注册中心instanceCacheMap里
      * 提取出反射实例，然后进行方法调用，再返回结果给consumer即可
      * @param ctx
      * @param msg

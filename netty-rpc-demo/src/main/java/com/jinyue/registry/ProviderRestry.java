@@ -9,6 +9,10 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
+/**
+ * 该类主要时充当“注册中心的作用”
+ * 将provider的服务实现类注册到本地缓存里面，采用ConcurrentHashMap【key为接口名，value为服务实例】
+ */
 public class ProviderRestry {
     private static final Logger logger = Logger.getLogger(ProviderNettyHandler.class);
     // 服务提供者所在的包
