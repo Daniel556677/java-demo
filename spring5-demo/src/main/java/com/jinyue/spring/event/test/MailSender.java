@@ -7,8 +7,11 @@ import org.springframework.stereotype.Component;
 
 @Component("mailSender")
 public class MailSender {
+    /**
+     * 容器事件由容器触发
+     */
     @Autowired
-    private ApplicationContext applicationContext;  //容器事件由容器触发
+    private ApplicationContext applicationContext;
 
     public void sendMail(String to){
         System.out.println("MailSender开始发送邮件");
