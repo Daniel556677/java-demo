@@ -12,6 +12,7 @@
     <modules>
         <module>general-java</module>
         <module>netty-rpc-demo</module>
+        <module>spring5-demo</module>
     </modules>
 
     <properties>
@@ -19,6 +20,7 @@
         <netty.version>4.1.6.Final</netty.version>
         <log4j.version>1.2.16</log4j.version>
         <fastjson.version>1.2.4</fastjson.version>
+        <spring.version>5.1.13.RELEASE</spring.version>
     </properties>
 
 
@@ -36,6 +38,7 @@
                 <version>${netty.version}</version>
             </dependency>
 
+            <!-- https://mvnrepository.com/artifact/org.springframework -->
             <dependency>
                 <groupId>log4j</groupId>
                 <artifactId>log4j</artifactId>
@@ -45,6 +48,32 @@
                 <groupId>com.alibaba</groupId>
                 <artifactId>fastjson</artifactId>
                 <version>${fastjson.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-context</artifactId>
+                <version>${spring.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-beans</artifactId>
+                <version>${spring.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-core</artifactId>
+                <version>${spring.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-aop</artifactId>
+                <version>${spring.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-aspects</artifactId>
+                <version>${spring.version}</version>
             </dependency>
         </dependencies>
 
