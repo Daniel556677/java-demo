@@ -1,4 +1,4 @@
-package com.abc.dynamicproxy.withoutimpl;
+package com.jinyue.dynamicproxy.withoutimpl;
 
 public class Test {
     @org.junit.Test

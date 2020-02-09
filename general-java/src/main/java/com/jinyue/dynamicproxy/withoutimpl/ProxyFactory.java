@@ -1,4 +1,4 @@
-package com.abc.dynamicproxy.withoutimpl;
+package com.jinyue.dynamicproxy.withoutimpl;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
