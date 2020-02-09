@@ -1,4 +1,4 @@
-package com.jinyue.spring.event.customevent;
+package com.jinyue.spring.event.customspringevent.customevent;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.event.ApplicationContextEvent;

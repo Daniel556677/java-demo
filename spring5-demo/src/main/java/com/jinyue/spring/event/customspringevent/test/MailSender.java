@@ -1,6 +1,6 @@
-package com.jinyue.spring.event.test;
+package com.jinyue.spring.event.customspringevent.test;
 
-import com.jinyue.spring.event.customevent.MailSendEvent;
+import com.jinyue.spring.event.customspringevent.customevent.MailSendEvent;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.stereotype.Component;

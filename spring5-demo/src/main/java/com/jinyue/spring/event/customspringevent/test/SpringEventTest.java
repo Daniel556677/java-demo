@@ -1,8 +1,7 @@
-package com.jinyue.spring.event.test;
+package com.jinyue.spring.event.customspringevent.test;
 
-import com.jinyue.spring.event.config.JavaConfig;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-
+import com.jinyue.spring.event.customspringevent.config.JavaConfig;
 /**
  * 参考：https://www.cnblogs.com/xinde123/p/8918714.html
  */

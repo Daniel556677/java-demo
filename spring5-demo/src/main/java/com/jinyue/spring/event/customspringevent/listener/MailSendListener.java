@@ -1,6 +1,6 @@
-package com.jinyue.spring.event.listener;
+package com.jinyue.spring.event.customspringevent.listener;
 
-import com.jinyue.spring.event.customevent.MailSendEvent;
+import com.jinyue.spring.event.customspringevent.customevent.MailSendEvent;
 import org.springframework.context.ApplicationListener;
 import org.springframework.stereotype.Component;
 
