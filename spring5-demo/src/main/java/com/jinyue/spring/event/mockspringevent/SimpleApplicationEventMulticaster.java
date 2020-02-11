@@ -8,11 +8,11 @@ import java.util.List;
 import java.util.concurrent.*;
 
 public class SimpleApplicationEventMulticaster implements ApplicationEventMulticaster {
-
+    // 是否异步发布事件
     private boolean async = false;
-
-
+    // 线程池
     private Executor taskExecutor = new ThreadPoolExecutor(5, 5, 0, TimeUnit.SECONDS, new LinkedBlockingQueue<Runnable>());
+    // 事件监听器列表
     private List<ContextListener<?>> contextListeners = new ArrayList<ContextListener<?>>();
 
     
@@ -34,9 +34,11 @@ public class SimpleApplicationEventMulticaster implements ApplicationEventMultic
 
     private void doMulticastEvent(List<ContextListener<?>> contextListeners, AbstractContextEvent event) {
         for (ContextListener contextListener : contextListeners) {
+            // 异步广播事件
             if (async) {
-                // taskExecutor.execute(() -> invokeListener(contextListener, event));
-                new Thread(() -> invokeListener(contextListener, event)).start();
+                taskExecutor.execute(() -> invokeListener(contextListener, event));
+                // new Thread(() -> invokeListener(contextListener, event)).start();
+            // 同步发布事件，阻塞的方式
             } else {
                 invokeListener(contextListener, event);
             }
