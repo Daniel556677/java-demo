@@ -10,6 +10,7 @@
         <module name="general-java" />
         <module name="netty-rpc-demo" />
         <module name="spring5-demo" />
+        <module name="springboot2-demo" />
       </profile>
     </annotationProcessing>
   </component>
