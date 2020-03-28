@@ -14,6 +14,7 @@
         <module>netty-rpc-demo</module>
         <module>spring5-demo</module>
         <module>design-pattern</module>
+        <module>jdbc-demo</module>
     </modules>
 
     <properties>

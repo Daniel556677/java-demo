@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="design-pattern" />
         <module name="general-java" />
+        <module name="jdbc-demo" />
         <module name="netty-rpc-demo" />
         <module name="spring5-demo" />
         <module name="springboot2-demo" />
