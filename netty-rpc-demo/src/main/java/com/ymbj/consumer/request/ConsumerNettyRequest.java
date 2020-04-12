@@ -20,7 +20,7 @@ public class ConsumerNettyRequest {
 
     public Object sendRequest(String interfaceName, String methodName, Class<?>[] parameterType, Object[] parameterValues) {
         EventLoopGroup eventLoopGroup = new NioEventLoopGroup();
-        ConsumerNettyHandler consumerNettyHandler = new ConsumerNettyHandler();
+        final ConsumerNettyHandler consumerNettyHandler = new ConsumerNettyHandler();
         try {
             Bootstrap bootstrap = new Bootstrap();
             bootstrap.group(eventLoopGroup)

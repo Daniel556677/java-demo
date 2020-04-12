@@ -23,6 +23,8 @@
         <log4j.version>1.2.16</log4j.version>
         <fastjson.version>1.2.4</fastjson.version>
         <spring.version>5.1.13.RELEASE</spring.version>
+        <!--maven编译的时候默认使用的GBK编码， 通过project.build.sourceEncoding属性设置字符编码，通知maven使用UTF-8编译项目 -->
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
 
@@ -94,4 +96,6 @@
             <artifactId>log4j</artifactId>
         </dependency>
     </dependencies>
+
+
 </project>
